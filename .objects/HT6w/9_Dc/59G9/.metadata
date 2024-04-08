@@ -1,0 +1,12 @@
+﻿{
+  "Name": "Windows PowerShell",
+  "Type": "Screen",
+  "Id": "59G9j27oJkqs-zXRhiXjug",
+  "Reference": "OrNd_LGDTk-uKxmpqPFyGw/59G9j27oJkqs-zXRhiXjug",
+  "ParentRef": "OrNd_LGDTk-uKxmpqPFyGw/9_DcBn26cU6sUklDpLW8IA",
+  "Created": "2024-04-07T08:40:52.03633Z",
+  "Updated": "2024-04-07T08:40:52.03633Z",
+  "CreatedBy": [
+    "UiPath.Platform, Version=24.2.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

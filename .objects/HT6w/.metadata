@@ -1,0 +1,11 @@
+﻿{
+  "Name": "Windows PowerShell app",
+  "Type": "App",
+  "Id": "HT6wPlRFSEezlQ3trXOCag",
+  "Reference": "OrNd_LGDTk-uKxmpqPFyGw/HT6wPlRFSEezlQ3trXOCag",
+  "Created": "2024-04-07T08:40:51.9751275Z",
+  "Updated": "2024-04-07T08:40:51.9751275Z",
+  "CreatedBy": [
+    "UiPath.Platform, Version=24.2.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}
