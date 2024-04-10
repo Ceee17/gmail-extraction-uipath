@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Main" VisualBasic.Settings="{x:Null}" sap2010:Annotation.AnnotationText="UPTF00000088eyI8SGVscExpbms+a19fQmFja2luZ0ZpZWxkIjpudWxsLCI8SW5pdGlhbFRvb2x0aXA+a19fQmFja2luZ0ZpZWxkIjpudWxsLCI8VmVyc2lvbj5rX19CYWNraW5nRmllbGQiOjF9" sap:VirtualizedContainerService.HintSize="661.6,4880" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:p="http://schemas.uipath.com/workflow/activities/python" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:uga="clr-namespace:UiPath.GSuite.Activities;assembly=UiPath.GSuite.Activities" xmlns:ugac="clr-namespace:UiPath.GSuite.Activities.Contracts;assembly=UiPath.GSuite.Activities" xmlns:ugm="clr-namespace:UiPath.GSuite.Models;assembly=UiPath.GSuite" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" VisualBasic.Settings="{x:Null}" sap2010:Annotation.AnnotationText="UPTF00000088eyI8SGVscExpbms+a19fQmFja2luZ0ZpZWxkIjpudWxsLCI8SW5pdGlhbFRvb2x0aXA+a19fQmFja2luZ0ZpZWxkIjpudWxsLCI8VmVyc2lvbj5rX19CYWNraW5nRmllbGQiOjF9" sap:VirtualizedContainerService.HintSize="620.8,4652.8" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:p="http://schemas.uipath.com/workflow/activities/python" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:uga="clr-namespace:UiPath.GSuite.Activities;assembly=UiPath.GSuite.Activities" xmlns:ugac="clr-namespace:UiPath.GSuite.Activities.Contracts;assembly=UiPath.GSuite.Activities" xmlns:ugm="clr-namespace:UiPath.GSuite.Models;assembly=UiPath.GSuite" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
       <x:String>System.Activities</x:String>
@@ -143,37 +143,35 @@
       <x:Boolean x:Key="ShouldExpandAll">False</x:Boolean>
     </scg:Dictionary>
   </sap:WorkflowViewStateService.ViewState>
-  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="672,4815.2" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="608,4588" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Int32" Name="setInput">
         <Variable.Default>
-          <Literal x:TypeArguments="x:Int32" Value="10" />
+          <Literal x:TypeArguments="x:Int32" Value="30" />
         </Variable.Default>
       </Variable>
       <Variable x:TypeArguments="x:String" Name="filterSubject" />
       <Variable x:TypeArguments="x:String" Default="D:\UiPath\ExtractData_V2\Excel\output.xlsx" Name="outputPath" />
-      <Variable x:TypeArguments="x:String" Name="workingPath">
-        <Variable.Default>
-          <Literal x:TypeArguments="x:String">D:\UiPath\ExtractData_V2\ExtractData_V2</Literal>
-        </Variable.Default>
-      </Variable>
+      <Variable x:TypeArguments="x:String" Default="D:\UiPath\ExtractData_V2\ExtractData_V2" Name="workingPath" />
+      <Variable x:TypeArguments="ui:Timer" Name="getVenvTime" />
+      <Variable x:TypeArguments="ui:Timer" Name="getPythonTime" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:InputDialog Options="{x:Null}" OptionsString="{x:Null}" DisplayName="Input Dialog" sap:VirtualizedContainerService.HintSize="609.6,281.6" sap2010:WorkflowViewState.IdRef="InputDialog_4" IsPassword="False" Label="input your choice" Title="How Many Emails You Want to Extract?">
+    <ui:InputDialog Options="{x:Null}" OptionsString="{x:Null}" DisplayName="Input Dialog" sap:VirtualizedContainerService.HintSize="545.6,281.6" sap2010:WorkflowViewState.IdRef="InputDialog_4" IsPassword="False" Label="Input your choice&#xA;Default : 30" Title="How Many Emails You Want to Extract?">
       <ui:InputDialog.Result>
         <OutArgument x:TypeArguments="x:Int32">[setInput]</OutArgument>
       </ui:InputDialog.Result>
     </ui:InputDialog>
-    <ui:InputDialog Options="{x:Null}" OptionsString="{x:Null}" DisplayName="Input Dialog" sap:VirtualizedContainerService.HintSize="609.6,281.6" sap2010:WorkflowViewState.IdRef="InputDialog_5" IsPassword="False" Label="example : subject:engineer  // to add 1 filters&#xA;example: subject:engineer subject:datascientist subject:dataanalyst // to add more than 1 filter&#xA;leave it blank if you dont want to add any filters" Title="Do you want to add filters for the subject?">
+    <ui:InputDialog Options="{x:Null}" OptionsString="{x:Null}" DisplayName="Input Dialog" sap:VirtualizedContainerService.HintSize="545.6,281.6" sap2010:WorkflowViewState.IdRef="InputDialog_5" IsPassword="False" Label="example : subject:engineer  // to add 1 filters&#xA;example: subject:engineer subject:datascientist subject:dataanalyst // to add more than 1 filter&#xA;leave it blank if you dont want to add any filters" Title="Do you want to add filters for the subject?">
       <ui:InputDialog.Result>
         <OutArgument x:TypeArguments="x:String">[filterSubject]</OutArgument>
       </ui:InputDialog.Result>
     </ui:InputDialog>
-    <uga:GSuiteApplicationScope Account="{x:Null}" ApiKey="{x:Null}" BrowserItemFriendlyName="{x:Null}" BrowserItemId="{x:Null}" BrowserParentItemId="{x:Null}" ConnectionAccountName="{x:Null}" ConnectionId="{x:Null}" Connector="{x:Null}" ContinueOnError="{x:Null}" Folder="{x:Null}" KeyPath="{x:Null}" SecureCredentialSecret="{x:Null}" ServiceAccountEmail="{x:Null}" UserEmail="{x:Null}" AuthenticationType="OAuthClientID" ConfigLocation="PropertiesPanel" CredentialID="65091657673-9jrsfs3bpul3tml50iqppsvojof806b1.apps.googleusercontent.com" CredentialSecret="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" DataStoreLocation="DISK" DisplayName="GSuite Application Scope" HasDomainWideAccesss="False" sap:VirtualizedContainerService.HintSize="609.6,1084.8" sap2010:WorkflowViewState.IdRef="GSuiteApplicationScope_1" KeyType="JSON" OAuthClient="CUSTOM" Password="notasecret" Services="Unselected" TimeoutMS="999999" UseConnectionService="False">
+    <uga:GSuiteApplicationScope Account="{x:Null}" ApiKey="{x:Null}" BrowserItemFriendlyName="{x:Null}" BrowserItemId="{x:Null}" BrowserParentItemId="{x:Null}" ConnectionAccountName="{x:Null}" ConnectionId="{x:Null}" Connector="{x:Null}" ContinueOnError="{x:Null}" Folder="{x:Null}" KeyPath="{x:Null}" SecureCredentialSecret="{x:Null}" ServiceAccountEmail="{x:Null}" UserEmail="{x:Null}" AuthenticationType="OAuthClientID" ConfigLocation="PropertiesPanel" CredentialID="65091657673-9jrsfs3bpul3tml50iqppsvojof806b1.apps.googleusercontent.com" CredentialSecret="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" DataStoreLocation="DISK" DisplayName="GSuite Application Scope" HasDomainWideAccesss="False" sap:VirtualizedContainerService.HintSize="545.6,1932.8" sap2010:WorkflowViewState.IdRef="GSuiteApplicationScope_1" KeyType="JSON" OAuthClient="CUSTOM" Password="notasecret" Services="Unselected" TimeoutMS="999999" UseConnectionService="False">
       <uga:GSuiteApplicationScope.AuthenticationScopes>
         <scg:List x:TypeArguments="InArgument(x:String)" Capacity="4">
           <InArgument x:TypeArguments="x:String">https://mail.google.com/</InArgument>
@@ -184,23 +182,27 @@
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="ugac:IGoogleWorkspaceTarget" Name="GSuiteScope" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="512,927.2" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="512,1775.2" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:String" Name="variable1" />
               <Variable x:TypeArguments="ugm:GmailMessage[]" Name="emailMessages" />
-              <Variable x:TypeArguments="x:String" Name="filterSubject" />
+              <Variable x:TypeArguments="ui:Timer" Name="getEmailTime" />
             </Sequence.Variables>
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <uga:GetMailMessages ContinueOnError="{x:Null}" EmailId="{x:Null}" AuthScopesInvalid="False" DisplayName="Get Mail Messages" sap:VirtualizedContainerService.HintSize="449.6,146.4" sap2010:WorkflowViewState.IdRef="GetMailMessages_1" MarkAsRead="True" MaxResults="[setInput]" Result="[emailMessages]" SearchExpression="[&quot;has:attachment filename:pdf &quot; + &quot;{&quot;+ filterSubject + &quot;}&quot;]">
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="449.6,182.4" sap2010:WorkflowViewState.IdRef="LogMessage_8" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Extracting &quot; + setInput.ToString + &quot;Emails...&quot;]" />
+            <ui:StartTimer DisplayName="Start Timer" sap:VirtualizedContainerService.HintSize="449.6,120.8" sap2010:WorkflowViewState.IdRef="StartTimer_1" Timer="[getEmailTime]" />
+            <uga:GetMailMessages ContinueOnError="{x:Null}" EmailId="{x:Null}" AuthScopesInvalid="False" DisplayName="Get Mail Messages" sap:VirtualizedContainerService.HintSize="449.6,146.4" sap2010:WorkflowViewState.IdRef="GetMailMessages_1" MarkAsRead="True" MaxResults="[setInput]" Result="[emailMessages]" SearchExpression="[&quot;has:attachment&quot; + &quot; { &quot; + filterSubject + &quot; }&quot;]">
               <uga:GetMailMessages.Labels>
                 <scg:List x:TypeArguments="InArgument(x:String)" Capacity="0" />
               </uga:GetMailMessages.Labels>
             </uga:GetMailMessages>
-            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="449.6,182.4" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[emailMessages.Count.ToString + &quot;Emails&quot;]" />
+            <ui:StopTimer DisplayName="Stop Timer" sap:VirtualizedContainerService.HintSize="449.6,120.8" sap2010:WorkflowViewState.IdRef="StopTimer_1" Timer="[getEmailTime]" />
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="449.6,182.4" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[emailMessages.Count.ToString + &quot; Emails Subject extracted in &quot; + getEmailTime.Elapsed.Seconds.ToString + &quot; seconds&quot;]" />
+            <ui:ResumeTimer DisplayName="Resume Timer" sap:VirtualizedContainerService.HintSize="449.6,120.8" sap2010:WorkflowViewState.IdRef="ResumeTimer_1" Timer="[getEmailTime]" />
             <ui:ForEach x:TypeArguments="ugm:GmailMessage" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="449.6,403.2" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[emailMessages]">
               <ui:ForEach.Body>
                 <ActivityAction x:TypeArguments="ugm:GmailMessage">
@@ -218,13 +220,16 @@
                 </ActivityAction>
               </ui:ForEach.Body>
             </ui:ForEach>
-            <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="449.6,108.8" sap2010:WorkflowViewState.IdRef="MessageBox_4" Text="[emailMessages.Count.ToString + &quot; Emails have been extracted&quot;]" />
+            <ui:StopTimer DisplayName="Stop Timer" sap:VirtualizedContainerService.HintSize="449.6,120.8" sap2010:WorkflowViewState.IdRef="StopTimer_2" Timer="[getEmailTime]" />
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="449.6,182.4" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;All emails attachment have been extracted in &quot; + getEmailTime.Elapsed.Seconds.ToString + &quot; seconds&quot;]" />
+            <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="449.6,108.8" sap2010:WorkflowViewState.IdRef="MessageBox_4" Text="[emailMessages.Count.ToString + &quot; Emails have been extracted in &quot; + getEmailTime.Elapsed.Minutes.ToString + &quot; minutes&quot; +  getEmailTime.Elapsed.Seconds.ToString + &quot; seconds&quot;]" />
           </Sequence>
         </ActivityAction>
       </uga:GSuiteApplicationScope.Body>
     </uga:GSuiteApplicationScope>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="609.6,182.4" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Activating Venv...&quot;]" />
-    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Always" DisplayName="Use Application: Command Prompt" sap:VirtualizedContainerService.HintSize="609.6,435.2" sap2010:WorkflowViewState.IdRef="NApplicationCard_4" ScopeGuid="15ed4d9d-41ee-4268-85fe-8cad472dd7ae" Version="V2">
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="545.6,182.4" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Activating Venv...&quot;]" />
+    <ui:StartTimer DisplayName="Start Timer" sap:VirtualizedContainerService.HintSize="545.6,120.8" sap2010:WorkflowViewState.IdRef="StartTimer_2" Timer="[getVenvTime]" />
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Always" DisplayName="Use Application: Command Prompt" sap:VirtualizedContainerService.HintSize="545.6,435.2" sap2010:WorkflowViewState.IdRef="NApplicationCard_4" ScopeGuid="15ed4d9d-41ee-4268-85fe-8cad472dd7ae" Version="V2">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
@@ -243,19 +248,29 @@
         <uix:TargetApp Area="215, 224, 1499, 770" Arguments="conda activate venv" FilePath="Microsoft.WindowsTerminal_8wekyb3d8bbwe!App" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAARMSURBVFhH7djHSjRdEAbgvh3zmHPOaSuigjuvQEQU3RhAQREEUcQspp3uBBVFUATBnHNczx3UP2/x1aE8fztBXU7DyzjdfU49VnefFp3wFt7CW4Dt8PDQ44vXFwo2Y2NjP0pTU1Mo8friATAkHOJWPJhYgGDiBdAV4S9uxYOJCyBgwkAdN0CgONXV1YRUVVWZVFZWmlRUVHxJeXm5SVlZmUlpaalJSUmJSXFxsUlRUdGXFBYWcgoKCr4kPz/fxPkOZuN+A7NxArNxGpaXl8cxwL+C2bifwgzQDQYMCmEiAAQUCBcqzB8uNzeXw0C7Y5ios7OTtra2qKOjw0CBCAXmDxcIhuTk5JCjcegOigD3+flJHx8f9P7+Tu3t7TyRINxgyF/BBGeA+h7DyZubmwx7e3uj19dXenl5oba2Nj6G4r+F+cMJDMnOziZHcAi6gslWV1cN7Pn5mZ6enujx8ZFaW1t5EhTXKH8wGxcsTMJAufkBRAHcY7u7uwb28PBA9/f3dHd3Ry0tLTwhCgv0O1wwMH+4rKwscgQnNz4KYhA+d3Z2GAfY7e0t3dzc0PX1NTU3N/NkKCzQYGA2zh9M4shTqYEogkH4xJOscVdXV3R5eUkDAwM8GYoKVMNsXKiwzMxMjgECh+CmR0cwKQah0MbGhoFdXFzQ+fk5nZ2dUX9/Pxf8CUzjNEzjGCgwwclTCSQmxQAc29/fN7DT01M6OTnhpx2T4DyNsmGIG8zGaVhGRgbHAAWngegGLl1vby91d3fTwcEBw46Pj+no6Ij3YxIU0si/gBmgDZMAhs/h4WEaHx+noaEh6urq4su9vb3NPycnJ38B/gZm49LT0zkM1DDBYT/+hltaWqKZmRkaHR2lwcFB7mRNTQ0lJiZSamoqT6yBGhYszg2GpKWlkaNhslwIbmVlhYFzc3M0MTFBIyMjVFtbSwkJCYzDhCgGCHAopid3C8ZJUlJS+FwbpsczEDDBoVhfXx8tLy/T4uIizc/P0+zsLE1OTlJdXZ0rDsH3vb098/7Ga1K/iWSx10vW+vo6JSUlMcSGIajjaBweChTCpVxYWDC46elpqq+vZ5z81sDhssllxGT6/a1fkfIW0mupLFfx8fE8J8ZrmISBwCF4AlG4sbGRLyvuvampKdM5wcl9J93DdxyT97d+RcpbyIZhucKKEBsby13UKAnmdAQnC6x0o6GhgXp6er50Dt3VOHwi2IcnGq9GG4auySKv11EsVWtrawaI8RomcWT110BAcKIeqDung47jfFwaXK6YmBiKjo6mqKgoioyMNImIiPhfcK7H4+EVQaMQ1EUMUC+yUlRuWumc3HcCk+AYzsOEKAYoCiNxcXGuQedwHFcHYzDWxjHQh/JqnKxlQAhK8h0OwS8jlwcTo/s6QCAASWSf4DTs3zgvgB4gBSdAQQaCIeiw7rjcSwJ26wwA+rveLzhfPP/+xxXewlt4c98c5z9BxdTdSJ+I3AAAAABJRU5ErkJggg==" InformativeScreenshot="e19640c5229d09ae96c43be4c17c6e5a.png" Selector="&lt;wnd app='windowsterminal.exe' appid='Microsoft.WindowsTerminal_8wekyb3d8bbwe!App' title='Command Prompt' /&gt;" Title="NVIDIA GeForce Overlay" />
       </uix:NApplicationCard.TargetApp>
     </uix:NApplicationCard>
-    <p:PythonScope OperationTimeout="{x:Null}" DisplayName="Python Scope" sap:VirtualizedContainerService.HintSize="609.6,428.8" sap2010:WorkflowViewState.IdRef="PythonScope_3" Path="C:\Users\jesse\anaconda3\envs\venv" TargetPlatform="x64" WorkingFolder="[workingPath]">
+    <ui:StopTimer DisplayName="Stop Timer" sap:VirtualizedContainerService.HintSize="545.6,120.8" sap2010:WorkflowViewState.IdRef="StopTimer_3" Timer="[getVenvTime]" />
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="545.6,182.4" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Venv activated in &quot; + getVenvTime.Elapsed.Milliseconds.ToString + &quot; ms!&quot;]" />
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="545.6,182.4" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Executing Python Script...&quot;]">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:LogMessage>
+    <ui:StartTimer DisplayName="Start Timer" sap:VirtualizedContainerService.HintSize="545.6,120.8" sap2010:WorkflowViewState.IdRef="StartTimer_3" Timer="[getPythonTime]" />
+    <p:PythonScope OperationTimeout="{x:Null}" DisplayName="Python Scope" sap:VirtualizedContainerService.HintSize="545.6,246.4" sap2010:WorkflowViewState.IdRef="PythonScope_3" Path="C:\Users\jesse\anaconda3\envs\venv" TargetPlatform="x64" WorkingFolder="[workingPath]">
       <p:PythonScope.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="PythonEngineSessionProperty" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="416,352" sap2010:WorkflowViewState.IdRef="Sequence_14">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="416,169.6" sap2010:WorkflowViewState.IdRef="Sequence_14">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="353.6,182.4" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Executing Python Script...&quot;]" />
             <p:RunScript Code="{x:Null}" DisplayName="Run Python Script" sap:VirtualizedContainerService.HintSize="353.6,83.2" sap2010:WorkflowViewState.IdRef="RunScript_3" ScriptFile="D:\UiPath\ExtractData_V2\ExtractData_V2\ExtractData.py" />
           </Sequence>
         </ActivityAction>
@@ -267,74 +282,8 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </p:PythonScope>
-    <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="609.6,125.6" sap2010:WorkflowViewState.IdRef="MessageBox_5" Text="[&quot;Python script executed!&quot;]" />
-    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="609.6,316" sap2010:WorkflowViewState.IdRef="CommentOut_3">
-      <ui:CommentOut.Body>
-        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="416,197.6" sap2010:WorkflowViewState.IdRef="Sequence_17">
-          <sap:WorkflowViewStateService.ViewState>
-            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-            </scg:Dictionary>
-          </sap:WorkflowViewStateService.ViewState>
-          <ui:StartProcess Arguments="conda activate venv" DisplayName="Start Process" FileName="C:\WINDOWS\system32\cmd.exe" sap:VirtualizedContainerService.HintSize="353.6,111.2" sap2010:WorkflowViewState.IdRef="StartProcess_10" WorkingDirectory="[workingPath]" />
-        </Sequence>
-      </ui:CommentOut.Body>
-    </ui:CommentOut>
-    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="609.6,1590.4" sap2010:WorkflowViewState.IdRef="CommentOut_1">
-      <ui:CommentOut.Body>
-        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="574.4,1488.8" sap2010:WorkflowViewState.IdRef="Sequence_5">
-          <sap:WorkflowViewStateService.ViewState>
-            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-            </scg:Dictionary>
-          </sap:WorkflowViewStateService.ViewState>
-          <Sequence sap:VirtualizedContainerService.HintSize="512,1402.4" sap2010:WorkflowViewState.IdRef="Sequence_13">
-            <sap:WorkflowViewStateService.ViewState>
-              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-              </scg:Dictionary>
-            </sap:WorkflowViewStateService.ViewState>
-            <ui:StartProcess Arguments="{x:Null}" WorkingDirectory="{x:Null}" DisplayName="Start Process" FileName="C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe" sap:VirtualizedContainerService.HintSize="449.6,128" sap2010:WorkflowViewState.IdRef="StartProcess_7" />
-            <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Windows PowerShell" sap:VirtualizedContainerService.HintSize="449.6,1162.4" sap2010:WorkflowViewState.IdRef="NApplicationCard_3" ScopeGuid="187a2c95-b009-4b8e-81b5-df9a4c7a145b" Version="V2">
-              <uix:NApplicationCard.Body>
-                <ActivityAction x:TypeArguments="x:Object">
-                  <ActivityAction.Argument>
-                    <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
-                  </ActivityAction.Argument>
-                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="416,848" sap2010:WorkflowViewState.IdRef="Sequence_12">
-                    <Sequence.Variables>
-                      <Variable x:TypeArguments="x:String" Default="D:\UiPath\PythonExtractData" Name="scriptPath" />
-                    </Sequence.Variables>
-                    <sap:WorkflowViewStateService.ViewState>
-                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                      </scg:Dictionary>
-                    </sap:WorkflowViewStateService.ViewState>
-                    <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DelayBefore="0.5" DisplayName="Type Into 'InputBox'" EmptyFieldMode="None" sap:VirtualizedContainerService.HintSize="353.6,258.4" sap2010:WorkflowViewState.IdRef="NTypeInto_8" ScopeIdentifier="187a2c95-b009-4b8e-81b5-df9a4c7a145b" Text="D:[k(Enter)]" Version="V3">
-                      <uix:NTypeInto.Target>
-                        <uix:TargetAnchorable CvElementArea="17, 44, 1473, 713" CvType="InputBox" DesignTimeRectangle="17, 44, 1473, 713" DesignTimeScaleFactor="1.25" ElementType="InputBox" Guid="cc46047d-a6b8-49d5-aee6-d03b821f38aa" InformativeScreenshot="21658d28a9f9e16e028675c60a5cbcb6.png" ScopeSelectorArgument="&lt;wnd app='windowsterminal.exe' appid='Microsoft.WindowsTerminal_8wekyb3d8bbwe!App' title='Windows PowerShell' /&gt;" SearchSteps="CV" TargetType="ComputerVisionBased" Version="V3" Visibility="Interactive" />
-                      </uix:NTypeInto.Target>
-                    </uix:NTypeInto>
-                    <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DelayBefore="0.2" DisplayName="Type Into 'InputBox'" EmptyFieldMode="None" sap:VirtualizedContainerService.HintSize="353.6,258.4" sap2010:WorkflowViewState.IdRef="NTypeInto_9" ScopeIdentifier="187a2c95-b009-4b8e-81b5-df9a4c7a145b" Text="[&quot;cd &quot; + scriptPath + &quot;[k(Enter)]&quot;]" Version="V3">
-                      <uix:NTypeInto.Target>
-                        <uix:TargetAnchorable CvElementArea="17, 44, 1473, 713" CvType="InputBox" DesignTimeRectangle="17, 44, 1473, 713" DesignTimeScaleFactor="1.25" ElementType="InputBox" Guid="1ea84210-2dc9-4176-8a1e-904ae818ed7f" InformativeScreenshot="21658d28a9f9e16e028675c60a5cbcb6.png" ScopeSelectorArgument="&lt;wnd app='windowsterminal.exe' appid='Microsoft.WindowsTerminal_8wekyb3d8bbwe!App' title='Windows PowerShell' /&gt;" SearchSteps="CV" TargetType="ComputerVisionBased" Version="V3" Visibility="Interactive" />
-                      </uix:NTypeInto.Target>
-                    </uix:NTypeInto>
-                    <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DelayAfter="0.7" DelayBefore="0.2" DisplayName="Type Into 'InputBox'" EmptyFieldMode="None" sap:VirtualizedContainerService.HintSize="353.6,243.2" sap2010:WorkflowViewState.IdRef="NTypeInto_10" ScopeIdentifier="187a2c95-b009-4b8e-81b5-df9a4c7a145b" Text="conda activate venv[k(Enter)]" Version="V3">
-                      <uix:NTypeInto.Target>
-                        <uix:TargetAnchorable CvElementArea="17, 44, 1473, 713" CvType="InputBox" DesignTimeRectangle="17, 44, 1473, 713" DesignTimeScaleFactor="1.25" ElementType="InputBox" Guid="1ea84210-2dc9-4176-8a1e-904ae818ed7f" InformativeScreenshot="21658d28a9f9e16e028675c60a5cbcb6.png" ScopeSelectorArgument="&lt;wnd app='windowsterminal.exe' appid='Microsoft.WindowsTerminal_8wekyb3d8bbwe!App' title='Windows PowerShell' /&gt;" SearchSteps="CV" TargetType="ComputerVisionBased" Version="V3" Visibility="Interactive" />
-                      </uix:NTypeInto.Target>
-                    </uix:NTypeInto>
-                  </Sequence>
-                </ActivityAction>
-              </uix:NApplicationCard.Body>
-              <uix:NApplicationCard.TargetApp>
-                <uix:TargetApp Area="0, 0, 0, 0" ContentHash="GMjUt-xxmE-Rz6aSb3K2gA" FilePath="Microsoft.WindowsTerminal_8wekyb3d8bbwe!App" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAARMSURBVFhH7djHSjRdEAbgvh3zmHPOaSuigjuvQEQU3RhAQREEUcQspp3uBBVFUATBnHNczx3UP2/x1aE8fztBXU7DyzjdfU49VnefFp3wFt7CW4Dt8PDQ44vXFwo2Y2NjP0pTU1Mo8friATAkHOJWPJhYgGDiBdAV4S9uxYOJCyBgwkAdN0CgONXV1YRUVVWZVFZWmlRUVHxJeXm5SVlZmUlpaalJSUmJSXFxsUlRUdGXFBYWcgoKCr4kPz/fxPkOZuN+A7NxArNxGpaXl8cxwL+C2bifwgzQDQYMCmEiAAQUCBcqzB8uNzeXw0C7Y5ios7OTtra2qKOjw0CBCAXmDxcIhuTk5JCjcegOigD3+flJHx8f9P7+Tu3t7TyRINxgyF/BBGeA+h7DyZubmwx7e3uj19dXenl5oba2Nj6G4r+F+cMJDMnOziZHcAi6gslWV1cN7Pn5mZ6enujx8ZFaW1t5EhTXKH8wGxcsTMJAufkBRAHcY7u7uwb28PBA9/f3dHd3Ry0tLTwhCgv0O1wwMH+4rKwscgQnNz4KYhA+d3Z2GAfY7e0t3dzc0PX1NTU3N/NkKCzQYGA2zh9M4shTqYEogkH4xJOscVdXV3R5eUkDAwM8GYoKVMNsXKiwzMxMjgECh+CmR0cwKQah0MbGhoFdXFzQ+fk5nZ2dUX9/Pxf8CUzjNEzjGCgwwclTCSQmxQAc29/fN7DT01M6OTnhpx2T4DyNsmGIG8zGaVhGRgbHAAWngegGLl1vby91d3fTwcEBw46Pj+no6Ij3YxIU0si/gBmgDZMAhs/h4WEaHx+noaEh6urq4su9vb3NPycnJ38B/gZm49LT0zkM1DDBYT/+hltaWqKZmRkaHR2lwcFB7mRNTQ0lJiZSamoqT6yBGhYszg2GpKWlkaNhslwIbmVlhYFzc3M0MTFBIyMjVFtbSwkJCYzDhCgGCHAopid3C8ZJUlJS+FwbpsczEDDBoVhfXx8tLy/T4uIizc/P0+zsLE1OTlJdXZ0rDsH3vb098/7Ga1K/iWSx10vW+vo6JSUlMcSGIajjaBweChTCpVxYWDC46elpqq+vZ5z81sDhssllxGT6/a1fkfIW0mupLFfx8fE8J8ZrmISBwCF4AlG4sbGRLyvuvampKdM5wcl9J93DdxyT97d+RcpbyIZhucKKEBsby13UKAnmdAQnC6x0o6GhgXp6er50Dt3VOHwi2IcnGq9GG4auySKv11EsVWtrawaI8RomcWT110BAcKIeqDung47jfFwaXK6YmBiKjo6mqKgoioyMNImIiPhfcK7H4+EVQaMQ1EUMUC+yUlRuWumc3HcCk+AYzsOEKAYoCiNxcXGuQedwHFcHYzDWxjHQh/JqnKxlQAhK8h0OwS8jlwcTo/s6QCAASWSf4DTs3zgvgB4gBSdAQQaCIeiw7rjcSwJ26wwA+rveLzhfPP/+xxXewlt4c98c5z9BxdTdSJ+I3AAAAABJRU5ErkJggg==" InformativeScreenshot="c843919e9df1afca3967cd64d4bffabf.png" Reference="OrNd_LGDTk-uKxmpqPFyGw/59G9j27oJkqs-zXRhiXjug" Selector="&lt;wnd app='windowsterminal.exe' appid='Microsoft.WindowsTerminal_8wekyb3d8bbwe!App' title='Windows PowerShell' /&gt;" Title="Windows PowerShell" />
-              </uix:NApplicationCard.TargetApp>
-            </uix:NApplicationCard>
-          </Sequence>
-        </Sequence>
-      </ui:CommentOut.Body>
-    </ui:CommentOut>
+    <ui:StopTimer DisplayName="Stop Timer" sap:VirtualizedContainerService.HintSize="545.6,120.8" sap2010:WorkflowViewState.IdRef="StopTimer_4" Timer="[getPythonTime]" />
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="545.6,182.4" sap2010:WorkflowViewState.IdRef="LogMessage_7" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Python script executed in &quot; +getPythonTime.Elapsed.Minutes.ToString + &quot; minutes&quot; + getPythonTIme.Elapsed.Seconds.ToString + &quot; seconds&quot;]" />
+    <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:05" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="545.6,108.8" sap2010:WorkflowViewState.IdRef="MessageBox_5" Text="[&quot;Python script executed in &quot; + getPythonTIme.Elapsed.Seconds.ToString + &quot; seconds!&quot;]" TopMost="True" />
   </Sequence>
 </Activity>
